@@ -1,0 +1,235 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* BODY */
+body {
+    background-color: #f4f6f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* SCROLL INDICATOR */
+.scroll-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100vh;
+    background: linear-gradient(#4e54c8, #8f94fb);
+}
+
+/* HEADER */
+.header {
+    min-height: 100vh;
+    background: linear-gradient(120deg, #4e54c8, #8f94fb);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+/* INTRO */
+.intro-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 1000px;
+    width: 100%;
+    color: white;
+}
+
+.intro-text h1 {
+    font-size: 75px;
+}
+
+.intro-text span {
+    color: #ffd369;
+}
+
+.intro-text p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+/* ARROW BUTTON */
+.arrow-btn {
+    display: inline-block;
+    margin-top: 30px;
+    font-size: 2.5rem;
+    color: white;
+    text-decoration: none;
+    animation: bounce 1.5s infinite;
+    opacity: 0;
+}
+
+/* IMAGE */
+.intro-image img {
+    width: 600px;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+
+/* SECTIONS */
+.section {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.section h2 {
+    margin-bottom: 15px;
+    color: #4e54c8;
+}
+
+/* SKILLS */
+.skills {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.skills li {
+    background: #4e54c8;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+/* PROJECTS */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: #4e54c8;
+    color: white;
+}
+
+/* BACK TO TOP */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    width: 50px;
+    height: 50px;
+
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    font-size: 1.5rem;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+}
+
+/* ANIMATIONS */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+.slide-up {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: slideUp 1.2s forwards;
+}
+
+.slide-in {
+    opacity: 0;
+    transform: translateX(60px);
+    animation: slideIn 1.2s forwards;
+}
+
+/* DELAYS */
+.delay {
+    animation-delay: 0.5s;
+}
+
+.delay-2 {
+    animation-delay: 1s;
+}
+
+.delay-3 {
+    animation-delay: 1.5s;
+}
+
+.delayed-image {
+    animation-delay: 1.8s;
+}
+
+.delayed-button {
+    animation: fadeIn 1s forwards, bounce 1.5s infinite;
+    animation-delay: 2.3s;
+}
+
+/* KEYFRAMES */
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .intro-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
