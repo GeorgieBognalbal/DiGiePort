@@ -5,90 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="Script.js" defer></script>
 </head>
-<body id="top">
 
-    <!-- SCROLL INDICATOR -->
-    <div class="scroll-indicator"></div>
+<body>
 
-    <!-- HEADER -->
-    <header class="header">
-        <div class="intro-container">
+<!-- SCROLL PROGRESS BAR -->
+<div id="progress-bar"></div>
 
-            <!-- TEXT -->
-            <div class="intro-text fade-in">
-                <h1>Hello, I'm <span>Georgie</span></h1>
-                <p>Computer Science Student</p>
+<nav class="top-bar">
+    <div class="logo">Georgie</div>
 
-                <!-- ARROW BUTTON (APPEARS AFTER INTRO) -->
-                <a href="#about" class="arrow-btn delayed-button">
-                    ↓
-                </a>
-            </div>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="hamburger">☰</label>
 
-            <!-- IMAGE -->
-            <div class="intro-image slide-in delayed-image">
-                <img src="images/GeorgieImage.png" alt="Profile Image">
-            </div>
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+    </ul>
+</nav>
 
+<!-- HEADER -->
+<header class="header" id="home">
+    <div class="intro-container">
+
+        <div class="intro-text fade-in">
+            <h1>Hello, I'm <span>Georgie</span></h1>
+            <p>Computer Science Student</p>
+
+            <a href="#about" class="arrow-btn delayed-button">↓</a>
         </div>
-    </header>
 
-    <!-- ABOUT -->
-    <section id="about" class="section slide-up">
-        <h2>About Me</h2>
-        <p>
-            I'm Georgie Bogñalbal, a student of Laguna State Polytechnic University
-            taking up Bachelor of Science in Computer Science. Passionate to learn programming
-            and continuesly aiming to improve and develop my skills.
-             
-        </p>
-        <ul class="social-media">
-            <li><img src="images/facebook.png" class="facebook" onclick="window.open('https://www.facebook.com/georgiericardo.bognalbal', '_blank')"></li>
-            <li><img src="images/instagram.png" class="instagram" onclick="window.open('https://www.instagram.com/cjorgie_?igsh=MWIyYzN4NXF5bHB3Ng==', '_blank')"></li>
-            <li><img src="images/github-sign.png" class="github" onclick="window.open('https://github.com/GeorgieBognalbal', '_blank')"></li>
-            <li><img src="images/gmail.png" class="gmail" onclick="window.open('mailto:georgiebognalbal0@gmail.com', '_blank')"></li>
-        </ul>
-    </section>
-
-    <!-- SKILLS -->
-    <section class="section slide-up delay">
-        <h2>Skills</h2>
-        <ul class="skills">
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>Basic JavaScript</li>
-            <li>C#</li>
-        </ul>
-    </section>
-
-    <!-- PROJECTS -->
-    <section class="section slide-up delay-2">
-        <h2>Projects</h2>
-
-        <div class="projects">
-            
-                <div class="card" onclick="window.open('https://github.com/GeorgieBognalbal/BattleShip', '_blank')">
-                    <h3 id="Project1">BattleShip</a></h3>
-                    <p>C# Console Based Game made for itec-102 final project.</p>
-                </div>
-
-            <div class="card" onclick="window.open('https://github.com/GeorgieBognalbal/ProjectTwo', '_blank')">
-                <h3 id="Project2">Project Two</h3>
-                <p>School or beginner project.</p>
-            </div>
-
+        <div class="intro-image slide-in delayed-image">
+            <img src="images/GeorgieImage.png" alt="Profile Image">
         </div>
-    </section>
 
-    
-    <!-- BACK TO TOP -->
-    <a href="#top" class="back-to-top">↑</a>
+    </div>
+</header>
 
-    <!-- FOOTER -->
-    <footer class="footer fade-in delay-3">
-        <p>“Wisdom is not a product of schooling but of the lifelong attempt to acquire it.” - Albert Einstein</p>
-    </footer>
+<!-- ABOUT -->
+<section id="about" class="section slide-up">
+    <h2>ABOUT ME</h2>
+    <p>
+        I'm Georgie Bogñalbal, a Computer Science student at Laguna State Polytechnic University,
+        passionate about programming and continuous learning. I enjoy learning new things speacially
+        in the field of technology and software development. My goal is to become a proficient software developer
+    </p>
+
+    <ul class="social-media">
+    <li><img src="images/facebook.png" class="facebook"></li>
+    <li><img src="images/instagram.png" class="instagram"></li>
+    <li><img src="images/github-sign.png" class="github"></li>
+    <li><img src="images/gmail.png" class="gmail"></li>
+</ul>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section slide-up delay">
+    <h2>SKILLS</h2>
+    <ul class="skills">
+        <li>C#</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>PHP</li>
+    </ul>
+</section>
+
+<!-- PROJECTS SECTION -->
+<section id="projects" class="projects-section">
+    <h2>PROJECT</h2>
+
+    <div class="projects-grid">
+
+        <a class="project-card" href="https://github.com/GeorgieBognalbal/BattleShip" target="_blank">
+            <h3>BattleShip</h3>
+            <p>C# console-based game created as a final project.</p>
+        </a>
+
+        <a class="project-card" href="https://github.com/GeorgieBognalbal" target="_blank">
+            <h3>More Projects</h3>
+            <p>View all projects on GitHub.</p>
+        </a>
+
+    </div>
+</section>
+
+<!-- BACK TO TOP -->
+<a href="#" class="back-to-top">↑</a>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>“Wisdom is not a product of schooling but of the lifelong attempt to acquire it.” – Albert Einstein</p>
+</footer>
 
 </body>
 </html>

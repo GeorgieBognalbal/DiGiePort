@@ -27,6 +27,113 @@ body {
     background: linear-gradient(#4e54c8, #8f94fb);
 }
 
+/* PROGRESS BAR */
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 0%;
+    background: #ffd369;
+    z-index: 2000;
+}
+
+/* TOP BAR BASE */
+.top-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background: #010325;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+    z-index: 1000;
+}
+
+/* LOGO */
+.logo {
+    color: #ffd369;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* NAV LINKS */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffd369;
+}
+
+/* HAMBURGER */
+.hamburger {
+    display: none;
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* CHECKBOX */
+#menu-toggle {
+    display: none;
+}
+
+/* MOBILE MENU */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #010325;
+        flex-direction: column;
+        width: 200px;
+        display: none;
+        padding: 15px 0;
+    }
+
+    .nav-links li {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    #menu-toggle:checked ~ .nav-links {
+        display: flex;
+    }
+}
+
+
+/* PROJECT IMAGES */
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* MOBILE MENU */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
 /* HEADER */
 .header {
     min-height: 100vh;
@@ -82,7 +189,7 @@ body {
 
 /* SECTIONS */
 .section {
-    padding: 60px 20px;
+    padding: 60px 200px;
     max-width: 900px;
     margin: auto;
 }
@@ -92,12 +199,32 @@ body {
     color: #4e54c8;
 }
 
+/* SOCIAL MEDIA */
 .social-media {
-    list-style-type: none;
+    list-style: none;
     display: flex;
-    gap: 40px;
-    
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+    padding: 0;
 }
+
+.social-media li {
+    width: 45px;
+    height: 45px;
+}
+
+.social-media li img {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.social-media li img:hover {
+    transform: scale(1.15);
+}
+
 
 .social-media li img {
     width: 40px;
@@ -120,27 +247,52 @@ body {
     border-radius: 5px;
 }
 
-/* PROJECTS */
-.projects {
+/* PROJECTS SECTION */
+.projects-section {
+    padding: 80px 200px;
+    background: #f9f9ff;
+}
+
+.projects-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #4e54c8;
+    font-size: 40px;
+}
+
+/* GRID */
+.projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
 }
 
-.card {
+/* CARD */
+.project-card {
     background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-    cursor: pointer;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project-link {
-    display: block;
-    text-decoration: none; 
-    color: inherit;   
+.project-card h3 {
+    margin-bottom: 10px;
+    color: #010325;
 }
+
+.project-card p {
+    color: #555;
+}
+
+/* HOVER */
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
 
 .card:hover {
     transform: translateY(-5px);
@@ -251,5 +403,26 @@ body {
     .intro-container {
         flex-direction: column;
         text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .top-bar ul {
+        display: none;
+        flex-direction: column;
+        background: #010325;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 200px;
+        padding: 10px;
+    }
+
+    .top-bar ul.show {
+        display: flex;
     }
 }
