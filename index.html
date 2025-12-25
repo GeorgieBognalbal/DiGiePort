@@ -21,10 +21,10 @@
     <label for="menu-toggle" class="hamburger">☰</label>
 
     <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#Contact">CONTACT</a></li>
+        <li><a href="#projects">PROJECTS</a></li>
     </ul>
 </nav>
 
@@ -52,54 +52,116 @@
     <p>
         I'm Georgie Bogñalbal, a Computer Science student at Laguna State Polytechnic University,
         passionate about programming and continuous learning. I enjoy learning new things speacially
-        in the field of technology and software development. My goal is to become a proficient software developer
-    </p>
-
-    <ul class="social-media">
-    <li><img src="images/facebook.png" class="facebook"></li>
-    <li><img src="images/instagram.png" class="instagram"></li>
-    <li><img src="images/github-sign.png" class="github"></li>
-    <li><img src="images/gmail.png" class="gmail"></li>
-</ul>
+        in the field of technology and software development. I like constantly challenging myself and push 
+        myself to learn and understand. My goal is to become a proficient software developer and 
+        contribute to innovative projects that make a positive impact.
+    </p>  
 </section>
+
+<hr class="section-divider">
 
 <!-- SKILLS -->
-<section id="skills" class="section slide-up delay">
-    <h2>SKILLS</h2>
-    <ul class="skills">
-        <li>C#</li>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>PHP</li>
-    </ul>
+<section id="skills" class="section">
+  <h2 id="skills-toggle">SKILLS</h2>
+
+  <div class="skills-cards hidden">
+    <div class="skill-card">HTML</div>
+    <div class="skill-card">CSS</div>
+    <div class="skill-card">JavaScript</div>
+    <div class="skill-card">PHP</div>
+    <div class="skill-card">C#</div>
+  </div>
 </section>
 
+<hr class="section-divider">
+
+<!-- CONTACT / SOCIAL SECTION -->
+<section id="Contact" class="contact-section slide-up">
+    <h2>CONTACT ME</h2>
+    <p class="contact-text">
+        Feel free to reach out for collaboration, projects, or questions.
+    </p>
+
+    <div class="contact-grid">
+
+        <div class="contact-card">
+            <img src="images/gmail.png" alt="Email">
+            <h3>Email</h3>
+            <p>Preferred contact</p>
+            <a href="mailto:georgiebognalbal0@gmail.com">Send Email</a>
+        </div>
+
+        <div class="contact-card">
+            <img src="images/github-sign.png" alt="GitHub">
+            <h3>GitHub</h3>
+            <p>View my projects</p>
+            <a href="https://github.com/GeorgieBognalbal" target="_blank">Visit GitHub</a>
+        </div>
+
+        <div class="contact-card">
+            <img src="images/facebook.png" alt="Facebook">
+            <h3>Facebook</h3>
+            <p>Connect with me</p>
+            <a href="https://www.facebook.com/georgiericardo.bognalbal" target="_blank">Open Facebook</a>
+        </div>
+
+        <div class="contact-card">
+            <img src="images/instagram.png" alt="Instagram">
+            <h3>Instagram</h3>
+            <p>Follow my journey</p>
+            <a href="https://www.instagram.com/cjorgie_?igsh=MWIyYzN4NXF5bHB3Ng==" target="_blank">
+                Open Instagram
+            </a>
+        </div>
+
+    </div>
+
+<div class="contact-extra">
+    <div class="map-card" id="map-card">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123803.52528385547!2d121.34841490875807!3d14.14431746726481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd59ffe9dad0a9%3A0x709376031e6ded12!2sLiliw%2C%20Laguna!5e0!3m2!1sen!2sph!4v1766665842655!5m2!1sen!2sph"
+         width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        <div class="map-overlay">
+            <span>LOCATE ME</span>
+        </div>
+    </div>
+
+</div>
+
+<hr class="section-divider">
+
 <!-- PROJECTS SECTION -->
-<section id="projects" class="projects-section">
-    <h2>PROJECT</h2>
+<section id="projects" class="section-project">
+    <h2>PROJECTS</h2>
 
     <div class="projects-grid">
 
-        <a class="project-card" href="https://github.com/GeorgieBognalbal/BattleShip" target="_blank">
+        <!-- KEEP YOUR EXISTING LINKS -->
+        <a id="project1" href="https://github.com/GeorgieBognalbal/BattleShip" target="_blank" class="project-card">
             <h3>BattleShip</h3>
-            <p>C# console-based game created as a final project.</p>
+            <p>C# Console Game</p>
         </a>
 
-        <a class="project-card" href="https://github.com/GeorgieBognalbal" target="_blank">
-            <h3>More Projects</h3>
-            <p>View all projects on GitHub.</p>
+        <a id="project2" href="https://github.com/GeorgieBognalbal" target="_blank" class="project-card">
+            <h3>Portfolio</h3>
+            <p>Personal Website</p>
+        </a>
+
+        <a id="project3" href="https://github.com/GeorgieBognalbal" target="_blank" class="project-card">
+            <h3>PHP Project</h3>
+            <p>Backend Practice</p>
         </a>
 
     </div>
 </section>
+
 
 <!-- BACK TO TOP -->
 <a href="#" class="back-to-top">↑</a>
 
 <!-- FOOTER -->
 <footer class="footer">
-    <p>“Wisdom is not a product of schooling but of the lifelong attempt to acquire it.” – Albert Einstein</p>
+    “Wisdom is not a product of schooling but of the lifelong attempt to acquire it.” - Albert Einstein
 </footer>
 
 </body>
