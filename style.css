@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
 /* RESET */
 * {
     margin: 0;
@@ -88,6 +90,11 @@ body {
     color: #ffd369;
 }
 
+.nav-links a.active {
+  color: #ffd369;
+  border-bottom: 2px solid #ffd369;
+}
+
 /* HAMBURGER */
 .hamburger {
     display: none;
@@ -99,6 +106,47 @@ body {
 /* CHECKBOX */
 #menu-toggle {
     display: none;
+}
+
+/* Typing */
+.typing-text span::before{
+    content: "Software Developer";
+    color: #b74b4b;
+    animation: words 20s infinite;
+}
+
+.typing-text span::after{
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 30px;
+    border-left: 3px solid black;
+    right: -8;
+    animation: cursor 0.6s infinite;
+}
+
+@keyframes cursor{
+    to{
+        border-left: 3px solid #ffd369;
+    }
+}
+
+@keyframes words{
+    0%, 20%{
+        content: "Web Developer";
+    }
+    21%, 40%{
+        content: "Developer";
+    }
+    41%, 60%{
+        content: "ComSci Student";
+    }
+}
+
+@media (max-width: 1000px){
+    .home{
+        gap: 4rem;
+    }
 }
 
 /* MOBILE MENU */
@@ -128,6 +176,9 @@ body {
     }
 }
 
+.section-project, .contact-section {
+  padding: 60px 5%;
+}
 
 /* PROJECT IMAGES */
 .card img {
@@ -183,10 +234,11 @@ body {
   background: linear-gradient(135deg, #ffffff, #f4f6f8);
   padding: 60px 40px;
   border-radius: 15px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 20px rgba(0,0,0,1);
   text-align: center;
   max-width: 900px;
   margin: 60px auto;
+  margin-top: 100px;
 }
 
 #about h2 {
@@ -256,43 +308,54 @@ body {
 .contact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 50px auto 0;
 }
+
 
 /* CARD */
 .contact-card {
-    background: white;
-    padding: 30px 20px;
-    border-radius: 15px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    background: #ffffff;
+    padding: 35px 25px;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+
+    text-align: center;
+    text-decoration: none;
+    color: #111;
+
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.contact-card img {
-    width: 50px;
-    margin-bottom: 15px;
+.contact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+}
+
+
+
+.contact-card i {
+    font-size: 40px;
+    color: #5b5bd6;
+    margin-bottom: 10px;
 }
 
 .contact-card h3 {
-    margin-bottom: 8px;
-    color: #010325;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .contact-card p {
-    font-size: 0.9rem;
+    font-size: 14px;
     color: #666;
-    margin-bottom: 15px;
 }
 
-.contact-card a {
-    text-decoration: none;
-    color: white;
-    background: linear-gradient(120deg, #4e54c8, #8f94fb);
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    display: inline-block;
-}
 
 .contact-extra iframe {
     border-radius: 12px;
@@ -473,19 +536,21 @@ body {
 }
 
 /* PROJECTS */
-.section-project {
+.section-project{
   padding: 60px 200px;
   max-width: 100%;
-  margin-top: 150px;
-  border-radius: 20px;
   background: linear-gradient(135deg, #010325, #050952);
   color: white;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.8), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-
-.section-project h2 {
-    margin-bottom: 15px;
-    color: #4e54c8;
+.proj-h2-div {
+    display: flex;
+    justify-content: center;
+    font-size: 100px;
+    margin-top: 100px;
+    color: #ffd369;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8)
 }
 
 /* GRID */
@@ -495,7 +560,6 @@ body {
   gap: 30px;
   width: 100%;
 }
-
 /* CARD */
 .project-card {
   background: white;
@@ -536,22 +600,16 @@ body {
 }
 
 /* FOOTER */
-.footer {
-  opacity: 0;             
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+.footer {            
   text-align: center;
   border-radius: 20px;
-  margin-top: 100px;
+  margin: 100px 100px 10px;
   padding: 20px;
   background: #010325;
   color: white;
 }
 
-.footer.show {
-  opacity: 1;               /* visible */
-  transform: translateY(0); /* slide into place */
-}
+
 
 /* BACK TO TOP */
 .back-to-top {

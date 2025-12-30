@@ -27,20 +27,39 @@ backToTop.addEventListener('click', (e) => {
 const sections = document.querySelectorAll('section, header');
 const navLinks = document.querySelectorAll('.nav-links a');
 
-window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 120;
-        if (window.scrollY >= sectionTop) current = section.id;
-    });
+const currentPath = window.location.pathname;
+const currentPage = currentPath.split('/').pop() || 'index.html';
 
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').includes(current)) {
-            link.classList.add('active');
+if (currentPage === 'index.html' || currentPage === '') {
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 120;
+            if (window.scrollY >= sectionTop) current = section.id;
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+        });
+
+        if (current === 'home') {
+            document.querySelector('a[href="#home"]').classList.add('active');
+        } else if (current === 'Contact') {
+            document.querySelector('a[href="#Contact"]').classList.add('active');
         }
     });
-});
+} else {
+    // For other pages, set the page link active
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+    });
+
+    if (currentPage === 'about.html') {
+        document.querySelector('a[href="about.html"]').classList.add('active');
+    } else if (currentPage === 'projects.html') {
+        document.querySelector('a[href="projects.html"]').classList.add('active');
+    }
+}
 
 /* MOBILE MENU TOGGLE */
 const menuToggle = document.getElementById('menu-toggle');
@@ -64,30 +83,8 @@ navLinks.forEach(link => {
 const mapCard = document.getElementById('map-card');
 
 mapCard.addEventListener('click', () => {
-    mapCard.classList.toggle('expanded'); // toggles minimized <-> expanded
+    mapCard.classList.toggle('expanded');
 });
-
-/* SKILLS CLICK */
-const skillsToggle = document.getElementById('skills-toggle');
-const skillsCards = document.querySelector('.skills-cards');
-
-skillsToggle.addEventListener('click', () => {
-  skillsCards.classList.toggle('show');
-  skillsCards.classList.toggle('hidden');
-});
-
-
-/* FOOTER */
-window.addEventListener("scroll", function() {
-  const footer = document.querySelector(".footer");
-
-  if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-    footer.classList.add("show");   // fade in
-  } else {
-    footer.classList.remove("show"); // fade out
-  }
-});
-
 
 /* SOCIAL MEDIA LINKS */
 let facebookIcon = document.querySelector('.facebook');
