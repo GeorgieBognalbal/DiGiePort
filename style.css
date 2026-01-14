@@ -727,7 +727,29 @@ body {
         padding: 10px;
     }
 
+    .intro-image img {
+        width: 400px;
+        height: 400px;
+    }
+
     .top-bar ul.show {
         display: flex;
+    }
+
+    .proj-h2-div {
+        font-size: 50px;
+        margin-top: 50px;
+    }
+
+    .projects-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        padding: 50px 50px;
+    }
+
+    .section-project {
+        padding: 60px 20px;
     }
 }
